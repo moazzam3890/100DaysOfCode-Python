@@ -15,20 +15,20 @@ rand_letter = 0
 rand_symbol = 0
 rand_number = 0
 saved_password = []
-for l in range(0, (nr_letters)):
+for l in range(1, (nr_letters+1)):
   rand_index_letter = random.randint(0, (len(letters)-1))
   # print(rand_index_letter)
   rand_letter = letters[rand_index_letter]
   print(rand_letter, end = "")
   saved_password.append(rand_letter)
 
-for s in range(0, nr_symbols):
+for s in range(1, (nr_symbols+1)):
   rand_index_symbol = random.randint(0, (len(symbols)-1))
   rand_symbol = symbols[rand_index_symbol]
   print(rand_symbol, end = "")
   saved_password.append(rand_symbol)
 
-for n in range(0, nr_numbers):
+for n in range(1, (nr_numbers+1)):
   rand_index_number = random.randint(0, (len(numbers)-1))
   rand_number = numbers[rand_index_number]
   print(rand_number, end="")
@@ -41,10 +41,17 @@ print("\n\n\n")
 
 combined_list = [letters, numbers, symbols]
 # print(saved_password+"\n")
-for hard in range(0, len(saved_password)):
+for hard in range(1, len(saved_password)+1):
     random_hard_index = random.randint(0, (len(saved_password)-1))
-    rand_hard_number = saved_password[random_hard_index]
-    print(rand_hard_number, end="")
+    rand_hard_pass = saved_password[random_hard_index]
 
+print(saved_password)
+random.shuffle(saved_password)
+print(saved_password)
+password = ""
+for char in saved_password:
+    password += char
+
+print(f"Your shuffled Password is: {password}")
 
 
