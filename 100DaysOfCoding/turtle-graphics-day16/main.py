@@ -28,15 +28,16 @@ print(table_object)
 table_object.clear()
 
 
-table_object.field_names = ["Pokemon Name", "Type"]
+table_object.field_names = ["Serial Number", "Pokemon Name", "Type"]
 table_object.add_rows(
     [
-        ["Pikachu", "Electric"],
-        ["Squirtle", "Water"],
-        ["Charmandor", "Fire"],
+        ["#001", "Pikachu", "Electric"],
+        ["#002", "Squirtle", "Water"],
+        ["#003", "Charmandor", "Fire"],
     ]
 )
-table_object.align["Pokemon Name"] = "l"
+table_object.align["Serial Number"] = "l"
+
 print(table_object)
 
 
