@@ -18,19 +18,13 @@ states_in_list = states_data["state"].to_list()
 count = 0
 game_continue = True
 guessed_states = []
-states_to_learn = {
-    "states to learn": [],
-}
+
 while game_continue:
     user_guess = screen.textinput(title=f"{count}/50 Guess the States", prompt="What's your guess?").title()
     count += 1
     s_no = -1
     if user_guess == "Exit":
-        for state in states_in_list:
-            if state in guessed_states:
-                pass
-            else:
-                states_to_learn["states to learn"].append(state)
+        states_to_learn = [state for state in states_in_list if state not in guessed_states]
         break
     for state in states_in_list:
         s_no += 1
