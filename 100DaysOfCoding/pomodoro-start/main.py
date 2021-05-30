@@ -12,7 +12,17 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 25
 REPS = 0
 timer = None
+pause = None
 
+
+# # ---------------------------- Pause Button Mechanism ------------------------------- #
+# def resume_button():
+#     window.after_idle(pause, 1000, pause_button, timer)
+#
+#
+# def pause_button():
+#     global pause
+#     pause = window.after_cancel(timer)
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
@@ -82,13 +92,19 @@ timer_label.grid(column=1, row=0)
 start_button = Button(text="Start", highlightthickness=0, command=timer_start)
 start_button.grid(column=0, row=2)
 
+# pause_button = Button(text="Pause", highlightthickness=0, command=pause_button)
+# pause_button.grid(column=1, row=2)
+#
+# resume_button = Button(text="Resume", highlightthickness=0, command=resume_button)
+# resume_button.grid(column=1, row=4)
+
 reset_button = Button(text="Reset", highlightthickness=0, command=reset_timer)
 reset_button.grid(column=2, row=2)
 
 check_mark = Label(fg=RED, bg=YELLOW)
 check_mark.grid(column=1, row=3)
 
-canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
+canvas = Canvas(width=200, height=230, bg=YELLOW, highlightthickness=0)
 tomato_img = PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato_img)
 timer_text = canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT_NAME, 25, "bold"))
