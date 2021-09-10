@@ -36,8 +36,8 @@ if will_rain:
     message = client.messages \
         .create(
         body="It's going to rain today. Wear Casual cloths for Office.",
-        from_="+14252305384",
-        to="+923218322229"
+        from_="Twillio Number",
+        to="Your Number"
     )
     print(message.status)
 else:
@@ -45,8 +45,8 @@ else:
     message = client.messages \
         .create(
         body="It's not going to rain today.",
-        from_="+14252305384",
-        to="+923218322229"
+        from_="Twillio Number",
+        to="Your Number"
     )
     print(message.status)
 
